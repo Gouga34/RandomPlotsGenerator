@@ -4,14 +4,14 @@
 #include "point.h"
 #include <array>
 
-class Polygon
+class Rectangle
 {
 private:
     std::array<Point, 4> m_points;
 
 public:
-    Polygon(Point a, Point b, Point c, Point d);
-    virtual ~Polygon();
+    Rectangle(Point a, Point b, Point c, Point d);
+    virtual ~Rectangle();
     virtual QString toString() const;
 };
 

@@ -17,13 +17,13 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     point.cpp \
     plot.cpp \
-    polygon.cpp
+    rectangle.cpp
 
 HEADERS  += mainwindow.h \
     point.h \
     plot.h \
     Constantes.h \
-    polygon.h
+    rectangle.h
 
 FORMS    += mainwindow.ui
 

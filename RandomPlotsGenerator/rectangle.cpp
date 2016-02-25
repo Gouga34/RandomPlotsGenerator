@@ -1,15 +1,15 @@
-#include "polygon.h"
+#include "rectangle.h"
 
-Polygon::Polygon(Point a, Point b, Point c, Point d) :  m_points {a, b, c, d}
+Rectangle::Rectangle(Point a, Point b, Point c, Point d) :  m_points {a, b, c, d}
 {
 
 }
 
-Polygon::~Polygon() {
+Rectangle::~Rectangle() {
 
 }
 
-QString Polygon::toString() const {
+QString Rectangle::toString() const {
     return "ST_GeomFromText('POLYGON(" + m_points[0].toString() + ", "
                                        + m_points[1].toString() + ", "
                                        + m_points[2].toString() + ", "
