@@ -11,7 +11,7 @@ enum class PlantType : int {
   NB_PLANT_TYPES
 };
 
-std::array<QString,static_cast<std::size_t>(PlantType::NB_PLANT_TYPES)> PlantTypeString {
+const std::array<QString,static_cast<std::size_t>(PlantType::NB_PLANT_TYPES)> PlantTypeString {
    "ble",
    "mais",
    "orge"
