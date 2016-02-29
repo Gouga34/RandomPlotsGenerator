@@ -17,4 +17,9 @@ const std::array<QString,static_cast<std::size_t>(PlantType::NB_PLANT_TYPES)> Pl
    "orge"
 };
 
+constexpr int PLOT_NB = 10'000;
+const QString FILENAME = "plots.txt";
+
+
+
 #endif // CONSTANTES_H
