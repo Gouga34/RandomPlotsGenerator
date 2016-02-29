@@ -22,14 +22,16 @@ SOURCES += main.cpp\
     point.cpp \
     plot.cpp \
     rectangle.cpp \
-    randomplotsgenerator.cpp
+    randomplotsgenerator.cpp \
+    filewriter.cpp
 
 HEADERS  += mainwindow.h \
     point.h \
     plot.h \
     Constantes.h \
     rectangle.h \
-    randomplotsgenerator.h
+    randomplotsgenerator.h \
+    filewriter.h
 
 FORMS    += mainwindow.ui
 

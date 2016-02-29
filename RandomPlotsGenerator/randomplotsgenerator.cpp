@@ -1,5 +1,6 @@
 #include "randomplotsgenerator.h"
 #include "Constantes.h"
+#include "filewriter.h"
 
 #include <stdlib.h>
 
@@ -35,7 +36,8 @@ void RandomPlotsGenerator::generateNbRandomPlots() {
 }
 
 void RandomPlotsGenerator::writePlotsInFile() const {
-
+    FileWriter fileWriter;
+    fileWriter.writePlots(m_plots);
 }
 
 void RandomPlotsGenerator::generateAndWriteRandomPlots() {
