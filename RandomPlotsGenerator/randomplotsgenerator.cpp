@@ -22,14 +22,16 @@ void RandomPlotsGenerator::generateRandomPlot(int i, int j) {
     int typeNumber = rand() % (int) PlantType::NB_PLANT_TYPES;
     PlantType type = static_cast<PlantType>(typeNumber);
 
-    Plot newRandomPlot(name, type, a, b, c, d);
+    Plot newRandomPlot(m_plots.size() ,name, type, a, b, c, d);
     m_plots.append(newRandomPlot);
 }
 
 void RandomPlotsGenerator::generateNbRandomPlots() {
+    int nbPlots = 0;
     for (int i = 0; i < PLOTS_NB_SQRT; i++) {
         for (int j = 0; j < PLOTS_NB_SQRT; j++) {
             generateRandomPlot(i,j);
+            nbPlots++;
         }
     }
 }

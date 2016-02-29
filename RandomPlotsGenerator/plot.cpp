@@ -1,7 +1,7 @@
 #include "plot.h"
 
-Plot::Plot(QString name, PlantType type, Point a, Point b, Point c, Point d) :
-    Rectangle(a, b, c, d), m_name(name), m_type(type)
+Plot::Plot(int id, QString name, PlantType type, Point a, Point b, Point c, Point d) :
+    Rectangle(a, b, c, d), m_name(name), m_type(type), m_id(id)
 {
 }
 
@@ -17,6 +17,10 @@ PlantType Plot::getType() const {
     return m_type;
 }
 
+int Plot::getId() const {
+    return m_id;
+}
+
 QString Plot::toString() const {
-    return m_name + "\t" + PlantTypeString[static_cast<std::size_t>(m_type)] + "\t" + Rectangle::toString();
+    return QString::number(m_id) + "\t" + m_name + "\t" + PlantTypeString[static_cast<std::size_t>(m_type)] + "\t" + Rectangle::toString();
 }
