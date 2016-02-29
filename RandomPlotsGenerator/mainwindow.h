@@ -1,22 +1,28 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
+#include <QLabel>
 
-namespace Ui {
-class MainWindow;
-}
+#include "randomplotsgenerator.h"
 
-class MainWindow : public QMainWindow
+
+class MainWindow : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow();
     ~MainWindow();
 
 private:
-    Ui::MainWindow *ui;
+    RandomPlotsGenerator m_randomPlotsGenerator;
+    QLabel *m_generatorState;
+
+    virtual void initializeWindow();
+    virtual void initializeLabel();
+
+public slots:
+    virtual void generateRandomPlots();
 };
 
 #endif // MAINWINDOW_H

@@ -2,7 +2,6 @@
 #include "Constantes.h"
 #include "filewriter.h"
 
-#include <stdlib.h>
 
 RandomPlotsGenerator::RandomPlotsGenerator() {
 

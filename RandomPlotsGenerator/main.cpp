@@ -7,14 +7,14 @@
 
 int main(int argc, char *argv[])
 {
-//    QApplication a(argc, argv);
-//    MainWindow w;
-//    w.show();
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
 
-//    return a.exec();
+    return a.exec();
 
-    RandomPlotsGenerator randomPlotsGenerator;
-    randomPlotsGenerator.generateAndWriteRandomPlots();
+//    RandomPlotsGenerator randomPlotsGenerator;
+//    randomPlotsGenerator.generateAndWriteRandomPlots();
 
-    std::cout << randomPlotsGenerator.toString().toStdString() << std::endl;
+//    std::cout << randomPlotsGenerator.toString().toStdString() << std::endl;
 }

@@ -33,5 +33,4 @@ HEADERS  += mainwindow.h \
     randomplotsgenerator.h \
     filewriter.h
 
-FORMS    += mainwindow.ui
 

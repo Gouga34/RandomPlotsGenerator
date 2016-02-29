@@ -1,14 +1,38 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+#include <QHBoxLayout>
+#include <QPushButton>
+
+MainWindow::MainWindow() : m_randomPlotsGenerator()
 {
-    ui->setupUi(this);
+    initializeWindow();
 }
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+}
+
+void MainWindow::initializeWindow() {
+   QPushButton *button = new QPushButton("Generate random plots", this);
+   button->resize(button->sizeHint().width(), button->sizeHint().height());
+   connect(button, SIGNAL (clicked()), this, SLOT (generateRandomPlots()));
+
+   initializeLabel();
+
+   QHBoxLayout *layout = new QHBoxLayout;
+
+   layout->addWidget(m_generatorState);
+   layout->addWidget(button);
+
+   setLayout(layout);
+}
+
+void MainWindow::generateRandomPlots() {
+    m_randomPlotsGenerator.generateAndWriteRandomPlots();
+    m_generatorState->setText("Plots generated");
+}
+
+void MainWindow::initializeLabel() {
+    m_generatorState = new QLabel(this);
+    m_generatorState->setText("wait for plots generation");
 }
