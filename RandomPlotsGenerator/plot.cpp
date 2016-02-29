@@ -22,5 +22,5 @@ int Plot::getId() const {
 }
 
 QString Plot::toString() const {
-    return QString::number(m_id) + "\t" + m_name + "\t" + PlantTypeString[static_cast<std::size_t>(m_type)] + "\t" + Rectangle::toString();
+    return QString::number(m_id) + "\t" + m_name + "\t" + Rectangle::toString() + "\t" + PlantTypeString[static_cast<std::size_t>(m_type)];
 }

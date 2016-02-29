@@ -13,11 +13,11 @@ Contenu d'une parcelle :
 Le fichier de sortie contient une parcelle par ligne. Une parcelle est de la forme :
 
 ```
-id  name  plantType  geometry
+id  name  geometry  plantType
 ```
 
 Exemple :
 
 ```
-0   plot1	mais	ST_GeomFromText('POLYGON(0 0, 10 0, 0 10, 10 10, 0 0)')
+0	plot1	POLYGON((0 0, 10 0, 0 10, 10 10, 0 0))	mais
 ```

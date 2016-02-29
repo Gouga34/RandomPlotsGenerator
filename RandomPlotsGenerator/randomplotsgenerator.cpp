@@ -14,8 +14,8 @@ RandomPlotsGenerator::~RandomPlotsGenerator() {
 void RandomPlotsGenerator::generateRandomPlot(int i, int j) {
     Point a(i*PLOT_SIZE, j*PLOT_SIZE);
     Point b((i+1)*PLOT_SIZE, (j*PLOT_SIZE));
-    Point c(i*PLOT_SIZE, (j+1)*PLOT_SIZE);
-    Point d((i+1)*PLOT_SIZE, (j+1)*PLOT_SIZE);
+    Point d(i*PLOT_SIZE, (j+1)*PLOT_SIZE);
+    Point c((i+1)*PLOT_SIZE, (j+1)*PLOT_SIZE);
 
     QString name = BASIC_PLOTS_NAME+QString::number(m_plots.size()+1);
 
@@ -27,11 +27,9 @@ void RandomPlotsGenerator::generateRandomPlot(int i, int j) {
 }
 
 void RandomPlotsGenerator::generateNbRandomPlots() {
-    int nbPlots = 0;
     for (int i = 0; i < PLOTS_NB_SQRT; i++) {
         for (int j = 0; j < PLOTS_NB_SQRT; j++) {
             generateRandomPlot(i,j);
-            nbPlots++;
         }
     }
 }
