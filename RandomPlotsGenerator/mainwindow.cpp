@@ -18,9 +18,11 @@ void MainWindow::initializeWindow() {
    connect(button, SIGNAL (clicked()), this, SLOT (generateRandomPlots()));
 
    initializeLabel();
+   initializeNbPlotsToGenerateSpinBox();
 
    QHBoxLayout *layout = new QHBoxLayout;
 
+   layout->addWidget(&m_nbPlotsToGenerate);
    layout->addWidget(m_generatorState);
    layout->addWidget(button);
 
@@ -28,7 +30,7 @@ void MainWindow::initializeWindow() {
 }
 
 void MainWindow::generateRandomPlots() {
-    m_randomPlotsGenerator.generateAndWriteRandomPlots();
+    m_randomPlotsGenerator.generateAndWriteRandomPlots(m_nbPlotsToGenerate.value());
     m_generatorState->setText("Plots generated");
 }
 
@@ -36,3 +38,10 @@ void MainWindow::initializeLabel() {
     m_generatorState = new QLabel(this);
     m_generatorState->setText("wait for plots generation");
 }
+
+void MainWindow::initializeNbPlotsToGenerateSpinBox() {
+    m_nbPlotsToGenerate.setRange(0, 100'000);
+    m_nbPlotsToGenerate.setValue(10'000);
+}
+
+

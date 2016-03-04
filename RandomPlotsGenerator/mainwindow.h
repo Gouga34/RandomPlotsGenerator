@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QLabel>
+#include <QSpinBox>
 
 #include "randomplotsgenerator.h"
 
@@ -17,9 +18,12 @@ public:
 private:
     RandomPlotsGenerator m_randomPlotsGenerator;
     QLabel *m_generatorState;
+    QSpinBox m_nbPlotsToGenerate;
+
 
     virtual void initializeWindow();
     virtual void initializeLabel();
+    virtual void initializeNbPlotsToGenerateSpinBox();
 
 public slots:
     virtual void generateRandomPlots();

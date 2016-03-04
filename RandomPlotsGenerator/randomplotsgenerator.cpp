@@ -26,9 +26,10 @@ void RandomPlotsGenerator::generateRandomPlot(int i, int j) {
     m_plots.append(newRandomPlot);
 }
 
-void RandomPlotsGenerator::generateNbRandomPlots() {
-    for (int i = 0; i < PLOTS_NB_SQRT; i++) {
-        for (int j = 0; j < PLOTS_NB_SQRT; j++) {
+void RandomPlotsGenerator::generateNbRandomPlots(int nbPlotsToGenerate) {
+    int plots_nb_sqrt = sqrt(nbPlotsToGenerate);
+    for (int i = 0; i < plots_nb_sqrt; i++) {
+        for (int j = 0; j < plots_nb_sqrt; j++) {
             generateRandomPlot(i,j);
         }
     }
@@ -39,8 +40,8 @@ void RandomPlotsGenerator::writePlotsInFile() const {
     fileWriter.writePlots(m_plots);
 }
 
-void RandomPlotsGenerator::generateAndWriteRandomPlots() {
-    generateNbRandomPlots();
+void RandomPlotsGenerator::generateAndWriteRandomPlots(int nbPlotsToGenerate) {
+    generateNbRandomPlots(nbPlotsToGenerate);
     writePlotsInFile();
 }
 
