@@ -24,5 +24,5 @@ Exemple :
 
 # Spécifications techniques
 
-- Utilisation de Qt
+- Qt
 - C++ 14
