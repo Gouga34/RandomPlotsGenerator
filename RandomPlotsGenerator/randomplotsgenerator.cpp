@@ -11,11 +11,11 @@ RandomPlotsGenerator::~RandomPlotsGenerator() {
 
 }
 
-void RandomPlotsGenerator::generateRandomPlot(int i, int j) {
-    Point a(i*PLOT_SIZE, j*PLOT_SIZE);
-    Point b((i+1)*PLOT_SIZE, (j*PLOT_SIZE));
-    Point d(i*PLOT_SIZE, (j+1)*PLOT_SIZE);
-    Point c((i+1)*PLOT_SIZE, (j+1)*PLOT_SIZE);
+void RandomPlotsGenerator::generateRandomPlot(int i, int j, int plotsSize) {
+    Point a(i*plotsSize, j*plotsSize);
+    Point b((i+1)*plotsSize, (j*plotsSize));
+    Point d(i*plotsSize, (j+1)*plotsSize);
+    Point c((i+1)*plotsSize, (j+1)*plotsSize);
 
     QString name = BASIC_PLOTS_NAME+QString::number(m_plots.size()+1);
 
@@ -26,11 +26,11 @@ void RandomPlotsGenerator::generateRandomPlot(int i, int j) {
     m_plots.append(newRandomPlot);
 }
 
-void RandomPlotsGenerator::generateNbRandomPlots(int nbPlotsToGenerate) {
+void RandomPlotsGenerator::generateNbRandomPlots(int nbPlotsToGenerate, int plotsSize) {
     int plots_nb_sqrt = sqrt(nbPlotsToGenerate);
     for (int i = 0; i < plots_nb_sqrt; i++) {
         for (int j = 0; j < plots_nb_sqrt; j++) {
-            generateRandomPlot(i,j);
+            generateRandomPlot(i,j, plotsSize);
         }
     }
 }
@@ -40,8 +40,8 @@ void RandomPlotsGenerator::writePlotsInFile() const {
     fileWriter.writePlots(m_plots);
 }
 
-void RandomPlotsGenerator::generateAndWriteRandomPlots(int nbPlotsToGenerate) {
-    generateNbRandomPlots(nbPlotsToGenerate);
+void RandomPlotsGenerator::generateAndWriteRandomPlots(int nbPlotsToGenerate, int plotsSize) {
+    generateNbRandomPlots(nbPlotsToGenerate, plotsSize);
     writePlotsInFile();
 }
 

@@ -19,10 +19,13 @@ void MainWindow::initializeWindow() {
 
    initializeLabel();
    initializeNbPlotsToGenerateSpinBox();
+   initialisePlotsSize();
 
    QHBoxLayout *layout = new QHBoxLayout;
 
    layout->addWidget(&m_nbPlotsToGenerate);
+   layout->addWidget(&m_plotsSize);
+
    layout->addWidget(m_generatorState);
    layout->addWidget(button);
 
@@ -30,7 +33,7 @@ void MainWindow::initializeWindow() {
 }
 
 void MainWindow::generateRandomPlots() {
-    m_randomPlotsGenerator.generateAndWriteRandomPlots(m_nbPlotsToGenerate.value());
+    m_randomPlotsGenerator.generateAndWriteRandomPlots(m_nbPlotsToGenerate.value(), m_plotsSize.value());
     m_generatorState->setText("Plots generated");
 }
 
@@ -42,6 +45,10 @@ void MainWindow::initializeLabel() {
 void MainWindow::initializeNbPlotsToGenerateSpinBox() {
     m_nbPlotsToGenerate.setRange(0, 100'000);
     m_nbPlotsToGenerate.setValue(10'000);
+}
+
+void MainWindow::initialisePlotsSize() {
+    m_plotsSize.setValue(10);
 }
 
 

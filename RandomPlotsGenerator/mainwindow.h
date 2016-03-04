@@ -19,11 +19,13 @@ private:
     RandomPlotsGenerator m_randomPlotsGenerator;
     QLabel *m_generatorState;
     QSpinBox m_nbPlotsToGenerate;
+    QSpinBox m_plotsSize;
 
 
     virtual void initializeWindow();
     virtual void initializeLabel();
     virtual void initializeNbPlotsToGenerateSpinBox();
+    virtual void initialisePlotsSize();
 
 public slots:
     virtual void generateRandomPlots();
