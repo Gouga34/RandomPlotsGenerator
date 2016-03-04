@@ -21,3 +21,8 @@ Exemple :
 ```
 0	plot1	POLYGON((0 0, 10 0, 0 10, 10 10, 0 0))	mais
 ```
+
+# Spécifications techniques
+
+- Utilisation de Qt
+- C++ 14
